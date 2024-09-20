@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row">
+        <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">SISTEMA WEB</a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/">
+                                Cadastrar
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active">Consultar</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container mt-4">
+        <div class="row">
+            <p class="fs-5">Consultar - Agendamento de Potenciais Clientes</p>
+            <p>Sistema Utilizado para agendamento de serviços.</p>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Telefone</th>
+                        <th scope="col">Origem</th>
+                        <th scope="col">Data Contato</th>
+                        <th scope="col">Observação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each posts}}
+                        {{#dataValues}}
+                            <tr>
+                                <td>{{id}}</td>
+                                <td>{{nome}}</td>
+                                <td>{{telefone}}</td>
+                                <td>{{origem}}</td>
+                                <td>{{data_contato}}</td>
+                                <td>{{observacao}}</td>
+                                <td><a href="/editar/{{id}}">Editar</a></td>
+                                <td><a href="/excluir/{{id}}">Excluir</a></td>
+                            </tr>
+                        {{/dataValues}}
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
